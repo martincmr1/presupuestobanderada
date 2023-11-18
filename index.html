@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!--<script src="html2pdf.js"></script> -->
+  <script src="./js/xlsx.mini.js"></script>
+  
+ 
+
+  
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+<script src="https://kit.fontawesome.com/302e8bad55.js" crossorigin="anonymous"></script>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+ <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">-->
+ <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>-->
+    
+ <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/estilos.css"> 
+    <title>PRESUPUESTO YPF BOXES</title>
+</head>
+<body>
+    <header>        
+    </header>
+    <main> 
+      <div  class="container">
+        <div class="row">
+            <div class="col-4 col-xs-4 col-lg-12 col-md-12 col-sm-4 col-12 col-xl-12 border border-success-subtle">
+                <div class="contenedor_logo row border border-success-subtle">
+                    <div class="row">
+                      <div class="col-3 col-md-3 col-sm-3 col-xl-3">
+                        <a href="index.html">   <img src="./css/logo.jpg" alt="logo" class="logo_boxes"> </a>    
+                        </div>
+                          <div class="parrafo_revision col-7 col-md-7 col-sm-7 col-xl-7">
+                          <p><b>  27 PUNTOS DE REVISION + ESCANEO ELECTRONICO</b></p>
+                        </div>
+                        <div class="fecha col-2 col-md-2 col-sm-2 col-xl-2" id="fechaYhora">
+                        </div>
+                          <div class="row">
+                            <div class="datos_contacto col-6 col-md-6 col-sm-6 col-xl-6 d-flex">
+                             <img class="imagen_ubicacion" src="./img/ubicacion.png" alt=""><p class="textoDireccion" id="direccion"> </p>
+                           </div>
+                            <div class="col-2 col-md-2 col-sm-2 col-xl-2"><p>Turnos <span class="mano">👉</span> </p>
+                          </div>                        
+                            <div class="col-2 col-md-2 col-sm-2 col-xl-2 datos_contacto d-flex">
+                              <img class="appypf_logo" src="./img/unnamed.png" alt=""><p>  APP YPF</p>
+                            </div> 
+                              <div class="col-1 col-md-1 col-sm-1 col-xl-1 datos_contacto d-flex">
+                                <img class="whatsapp_logo" src="./img/whastapp.png" alt=""><p id="telefono"></p>
+                              </div>
+                            </div>  
+                              <div class="row">
+                                <div class="col-md-1 col-1 col-sm-1 col-1 col-xl-1">
+                                 <p>Vehículo</p>
+                             </div>                    
+                              <div class="col-md-7 col-7 col-sm-7 col-xl-7" id="Inputmanual ">                 
+                               <select class="form-select form-select-sm mb-3 coches" aria-label=".form-select-sm example" id="autos">
+                                <option selected><p id="recargarPagina" style="display:none;"></p></option>
+                                 <optgroup label="CHEVROLET">
+                                  
+                                  <option value="corsaclassic">Chevrolet Agile</option>
+                                  <option value="astra20nafta">Chevrolet Astra 2.0 nafta</option>
+                                  <option value="astra20diesel">Chevrolet Astra 2.0 diesel </option>
+                                  <option value="aveog1">Chevrolet Aveo G1</option> 
+                                  <option value="aveog3">Chevrolet Aveo G3</option>
+                                  <option value="corsaclassic">Chevrolet Corsa Classic 1.4 -1.6</option>
+                                  <option value="meriva18">Chevrolet Corsa 2 1.8</option>
+                                  <option value="merivad">Chevrolet Corsa 2 Diesel</option>
+                                  <option value="celta">Chevrolet Celta</option>
+                                  <option value="cruze14">Chevrolet Cruze 1.4</option>
+                                  <option value="cruze18">Chevrolet Cruze 1.8 16v</option>
+                                  <option value="equinox">Chevrolet Equinox 1.5T</option>
+                                  <option value="meriva18">Chevrolet Meriva 1.8 </option>
+                                  <option value="merivad">Chevrolet Meriva Diesel </option>
+                                  <option value="tracker12">Chevrolet Onix 1.2- 1.0 </option>
+                                  <option value="prisma/onix1.4/spin1.8">Chevrolet Onix 1.4 </option>
+                                  <option value="prisma/onix1.4/spin1.8">Chevrolet Prisma 1.4 </option>
+                                  <option value="spark12">Chevrolet Spark 1.2 </option>
+                                  <option value="prisma/onix1.4/spin1.8">Chevrolet Spin 1.8</option>
+                                  <option value="s10mwm">Chevrolet S10 2.8 MWM </option>
+                                  <option value="s10duramax">Chevrolet S10 2.8 (DURAMAX)</option>
+                                  <option value="sonic">Chevrolet Sonic</option>
+                                  <option value="tracker12">Chevrolet Tracker 1.2- 1.0 </option>
+                                  <option value="tracker18">Chevrolet Tracker 1.8</option>
+
+                                </optgroup>
+                                <optgroup label="CHERY">
+                                  <option value="tiggo20">Chery Tiggo 2.0 </option>
+
+                                  
+                                </optgroup>
+                                <optgroup label="CITROEN">
+                                  <option value="c3nafta">Citroen Berlingo 1.4 / 1.6 nafta</option>
+                                  <option value="berlingo19">Citroen Berlingo 1.9 d </option>
+                                 <option value="berlingohdi">Citroen Berlingo hdi 1.6 </option>
+                                  <option value="cactusthp">Citroen Cactus thp 1.6 </option> 
+                                  <option value="c3nafta">Citroen Cactus vti</option>
+                                 <option value="c3nafta">Citroen C3 NAFTA  </option>
+                                 <option value="c3nafta">Citroen C3  Aircross </option>
+                                 <option value="c416nafta">Citroen C4 1.6 vti</option> 
+                                 <option value="c416thp">Citroen C4 1.6 thp</option>
+                                 <option value="berlingohdi">Citroen C4 1.6 hdi</option>
+                                 <option value="c420">Citroen C4 2.0 nafta</option>   
+                                 <option value="jumpy">Citroen Jumpy hdi 1.6 </option>     
+                               </optgroup>
+                               <optgroup label="FIAT">
+                                <option value="147">Fiat 147/SPAZIO nafta</option>
+                                <option value="argo/cronos13">Fiat Argo 1.3 firefly</option>
+                                 <option value="argo/cronos18">Fiat Argo 1.8</option>
+                                 <option value="argo/cronos13">Fiat Cronos 1.3 firefly</option>
+                                 <option value="argo/cronos18">Fiat Cronos 1.8</option>
+                                 <option value="paliosiena14">Fiat Idea 1.4 fire</option>
+                                 <option value="paliosiena16">Fiat Idea 1.6 e-Torq</option>
+                                 <option value="palio18">Fiat Idea 1.8 GM</option>
+                                 <option value="paliosiena14">Fiat Fiorino 1.4-1.3 fire</option>
+
+
+
+                                 <option value="mobi">Fiat MOBI </option>
+                                 <option value="paliosiena14">Fiat Palio 1.4-1.3 fire</option>
+                                 <option value="paliosiena16">Fiat Palio 1.6 e-Torq</option>
+                                 <option value="palio18">Fiat Palio 1.8 GM</option>
+                                 <option value="paliodiesel">Fiat Palio 1.7 DIESEL</option>
+                                 <option value="punto14">Fiat Punto 1.4 fire</option>
+                                 <option value="paliosiena16">Fiat Punto 1.6 e-Torq</option>
+                                 <option value="qubo">Fiat Qubo 1.4</option>
+                                 <option value="paliosiena14">Fiat Siena 1.4-1.3 fire</option>
+                                 <option value="paliosiena16">Fiat Siena 1.6 e-Torq</option>
+                                 <option value="palio18">Fiat Siena 1.8 GM</option>
+                                 <option value="paliodiesel">Fiat Siena 1.7 DIESEL</option>
+                                 <option value="paliosiena16">Fiat Strada 1.6 e-Torq</option>
+                                 <option value="torod">Fiat Toro Diesel</option>
+                                 <option value="toron">Fiat Toro Nafta 1.8</option>
+                                 <option value="unofire">Fiat Uno fire </option>
+                                 <option value="nuevouno">Fiat  Uno NOVO </option>
+                                 <option value="argo/cronos13">Fiat Uno firefly</option>
+                                 <option value="500multiair">Fiat 500 1.4 multiair </option>
+                              </optgroup>
+                              <optgroup label="FORD">
+                                <option value="bronco15">Ford Bronco 1.5 Ecoboost</option>
+                                <option value="bronco20">Ford Bronco 2.0 Ecoboost</option>
+                                <option value="ecosport14d">Ford Ecosport 1.4 diesel</option>
+                                <option value="ecosportrocam">Ford Ecosport Rocam 1.6</option>
+                                <option value="fiestakinetic">Ford Ecosport 1.6 16v Sigma</option>
+                                <option value="ecosport15">Ford Ecosport 1.5 dragon</option>
+                                <option value="escortzetec">Ford Escort 1.8 zetec</option>
+                                <option value="escortendura">Ford Escort 1.7 diesel</option>
+                                <option value="fiestakinetic">Ford Fiesta kinetic 1.6 16v Sigma</option>
+                                <option value="ecosportrocam">Ford Fiesta Rocam 1.6</option>
+                                <option value="ecosport14d">Ford Fiesta 1.4 diesel</option>
+                                <option value="fiestakinetic">Ford Fiesta kinetic 1.6 16v Sigma</option>
+                                <option value="ecosport20kinetic">Ford Ecosport 2.0 kinetic</option>
+                                <option value="focus2/31.6">Ford Focus II/III 1.6</option>
+                                <option value="focus2diesel">Ford Focus II 1.8 TDCI</option>
+                                <option value="focus2/2.0">Ford Focus II/III 2.0</option> 
+                                <option value="ka2rocam">Ford KA II 1.6 /1.0 ROCAM</option>
+                                <option value="fiestakinetic">Ford ka III 1.5 Sigma</option>
+                                <option value="ecosport15">Ford KA III 1.5 dragon 2018+</option>
+                                <option value="bronco20">Ford Maverick 2.0 Ecoboost</option>
+                                <option value="ranger25">Ford Ranger 2.5 Nafta </option>
+                                <option value="ranger30pe">Ford Ranger 3.0 diesel</option>
+                                <option value="ranger22d">Ford Ranger 2.2 diesel </option>  
+                                <option value="ranger32">Ford Ranger 3.2 diesel</option>  
+                                <option value="raptor">Ford Raptor</option>                                                  
+                              </optgroup>
+                              <optgroup label="HONDA">
+                                <option value="hrv2">Honda hrv II 1.8</option>
+                                <option value="fit15">Honda Fit 1.5 / City</option>
+                                <option value="civicvtec">Honda Civic 1.8 2.0 vtec</option>
+                              </optgroup>
+                              <optgroup label="JEEP">
+                                <option value="renegadenafta">Jeep Renegade 1.8 NAFTA</option>
+                                <option value="renegadediesel">Jeep Renegade 2.0 DIESEL</option>
+                                <option value="compass24">Jeep Compass 2.4</option>
+                              </optgroup>
+                              <optgroup label="NISSAN">
+                                <option value="tiida">Nissan Tiida</option>
+                                <option value="march">Nissan March / Versa</option>
+                                <option value="kicks">Nissan Kicks 1.6</option>
+                                <option value="note">Nissan Note 1.6</option>
+                              </optgroup>
+                          <optgroup label="PEUGEOT">
+                            <option value="20716">Peugeot 206 / 207 1.6 16v /307 1.6 16v</option>
+                            <option value="20714">Peugeot 207 1.4 8v </option>
+                            <option value="20719d">Peugeot 207 1.9 diesel </option> 
+                            <option value="208n">Peugeot 208 16v vti/8v </option>
+                            <option value="208ii12">Peugeot 208 II  vti 1.2</option>
+                            
+                            <option value="208iivti">Peugeot 208 II 16v vti 1.6</option>
+                            <option value="208n">Peugeot 2008 16v vti</option>
+                            <option value="30720hdi">Peugeot 307 2.0 hdi </option>
+                            <option value="30720n">Peugeot 307 2.0 nafta </option>
+                            <option value="30816thp">Peugeot 308 1.6 thp / 2008 thp </option>
+                            <option value="30816vti">Peugeot 308 1.6 vti </option>
+                            <option value="30816hdi">Peugeot 308 1.6 hdi </option>
+                            <option value="30820nafta">Peugeot 308 2.0 nafta </option>
+                            <option value="3008thp">Peugeot 3008 1.6 thp</option>
+                            <option value="30816hdi">Peugeot 408 1.6 hdi</option>
+                            <option value="30820nafta">Peugeot 408 2.0 nafta </option>
+                            <option value="partner19">Peugeot Partner 1.9 d /206 1.9 d</option>
+                            <option value="partner16">Peugeot Partner 1.4 8v / 1.6 16v </option>
+                            <option value="partnerhdi">Peugeot Partner hdi 1.6 </option>
+                          </optgroup> 
+                          <optgroup label="RENAULT">
+                            <option value="alaskan">Renault Alaskan 2.3 dci </option>
+                            <option value="clio12">Renault Clio 1.2 / MIO </option>
+                            <option value="kangoon">Renault Clio 1.6 16v </option>
+                            <option value="kangoodci">Renault Clio DCI 1.5 </option>
+                            <option value="capture16">Renault Capture 1.6 </option>
+                            <option value="oroch20">Renault Capture 2.0</option>
+                            <option value="fluence16k4m">Renault Fluence 1.6 k4m </option>
+                            <option value="fluence20">Renault Fluence 2.0  </option> 
+                            <option value="kangoon">Renault Duster 1.6 16v </option>
+                            <option value="oroch20">Renault Duster 2.0 </option>
+                            <option value="kangoon">Renault Kangoo 1.6 16v </option>
+                            <option value="kangoodci">Renault Kangoo DCI </option>
+                            <option value="kangoo19">Renault Kangoo 1.9 diesel </option>
+                            <option value="kangoostepwayn">Renault Kangoo Steepway Nafta</option>
+                            <option value="kwid">Renault Kwid</option>
+                            <option value="sandero8v">Renault Logan 8v</option>
+                            <option value="kangoon">Renault Logan 1.6 16v </option>
+                            <option value="oroch20">Renault Oroch 2.0 </option>
+                            <option value="sandero8v">Renault Sandero 8v</option>
+                            <option value="kangoon">Renault Sandero 16v </option>
+                            <option value="kangoostepwayn">Renault Sandero +2020 </option>
+                            <option value="kangoon">Renault Symbol 1.6 16v</option>
+                          </optgroup> 
+
+                            <optgroup label="SUSUKI"> 
+                              <option value="celta">Susuki Fun </option>
+                            </optgroup> 
+                         
+                          <optgroup label="TOYOTA">
+                            <option value="etios">Toyota Etios / Yaris </option>
+                            <option value="corolla2011">Toyota Corolla 2011+</option>
+                            <option value="hilux30">Toyoya Hilux 3.0 / 2.5 D4D</option> 
+                            <option value="hilux24">Toyoya Hilux 2.4 TDI 2015+</option>
+                          </optgroup>  
+                          <optgroup label="VOLKSWAGEN"> 
+                            <option value="amarok20(2014-)">Volkswagen Amarok 2.0 2014- </option>
+                            <option value="amarok20(2015>)">Volkswagen Amarok 2.0 2015+</option>
+                            <option value="amarokv6">Volkswagen Amarok 3.0 V6</option>
+                            <option value="bora20">Volkswagen Bora 2.0</option>
+                            <option value="boratdi">Volkswagen Bora TDI</option>
+                            <option value="suran8v">Volkswagen Fox 1.6 8v</option>
+                            <option value="suran16v">Volkswagen Fox 1.6 16v</option>                           
+                            <option value="gol14">Volkswagen Gol 1.4</option>
+                            <option value="gol16">Volkswagen Gol 1.6</option>
+                            <option value="goltrend">Volkswagen Gol Trend 1.6</option>
+                            <option value="gol19">Volkswagen Gol 1.9 diesel</option>
+                            <option value="golfmsi16">Volkswagen Golf MSI  </option>
+                            <option value="golftsi14">Volkswagen Golf TSI </option> 
+                            <option value="uppepper">Volkswagen Nivus</option>                       
+                            <option value="polo16">Volkswagen Polo 1.6 generación 1</option>
+                            <option value="poloindia">Volkswagen Polo 1.6 (INDIA)</option>
+                            <option value="polo19">Volkswagen Polo 1.9 diesel</option>
+                            <option value="polo19tdi">Volkswagen Polo 1.9 TDI</option>
+                            <option value="golfmsi16">Volkswagen Polo MSI 1.6 </option>
+                            <option value="suran8v">Volkswagen Suran 1.6 8v</option>
+                            <option value="suran16v">Volkswagen Suran 1.6 16v</option>
+                            <option value="taos">Volkswagen Taos 1.4 tsi</option>
+                            <option value="golfmsi16">Volkswagen T-Cross 1.6 </option>
+                            <option value="up10">Volkswagen Up 1.0</option> 
+                            <option value="uppepper">Volkswagen Up Pepper </option>
+                            <option value="virtus16">Volkswagen Virtus 1.6</option>
+                            <option value="ventodiesel">Volkswagen Vento Diesel </option>
+                            <option value="vento25">Volkswagen Vento 2.5</option>
+                            <option value="golftsi14">Volkswagen Vento TSI 1.4 </option> 
+                            <option value="goltrend">Volkswagen Voyage 1.6</option>
+                          </optgroup>  
+
+
+                        </select> 
+                      
+                      
+                      </div>                      
+                       <div class="col-md-4 col-4 col-sm-4 col-xl-4 contenedor_patente ">
+                        <div class="form-floating contenedor_patente">
+                     <input type="text" id="inputPatente">
+                       </div>     
+                     </div>
+                   </div>
+                 </div>              
+               </div>                                     
+                <div class="contenedor_presupuesto" id="contenedor_presupuesto"> 
+                 <table class="table">         
+                  <tbody>
+                   <tr id="fila1">
+                   <th class="anchoColumna" scope="row">Lubricante</th>
+                   <td><img id="icono_elaion" class="icono_elaion" src="./img/elaion.ico" alt=""><img id="icono_elaionf10" class="icono_elaion" src="./img/f10.jpg" alt=""><img id="icono_elaionf30" class="icono_elaion" src="./img/f30.jpg" alt=""><img id="icono_elaionf50" class="icono_elaion" src="./img/f50.jpg" alt=""><img id="icono_elaionfs50" class="icono_elaion" src="./img/ElaionFS540.png" alt=""><input type="number" id="inputBuscar">                    
+                    <button class="btn btn-danger" id="boton01"> <i class="fas fa-trash-alt"></i>  </button> <button class="btn btn-primary" id="boton0">+ </button></td>
+                   <td id="descripcion"></td>
+                   <td><select id="cantidad1">
+                    <!-- Agrega opciones numéricas según tus necesidades -->
+                    <option value="1"><span>1 Un</span></option>
+                    <option value="2"><span>2 Un</span></option>
+                    <option value="3"><span>3 Un</span></option>
+                    <option value="4"><span>4 Un</span></option>
+                    <option value="5"><span>5 Un</span></option>
+                    <option value="6"><span>6 Un</span></option>
+                    <option value="7"><span>7 Un</span></option>
+                    <option value="8"><span>8 Un</span></option>
+                    <option value="9"><span>9 Un</span></option>
+                    <!-- ... -->
+                  </select></td>
+                  <td></td>
+                   <td class="precio" id="precio"></td>
+                   </tr>
+                   <tr id="fila2">
+                   <th scope="row">Lubricante</th>
+                   <td>
+                    <img id="icono_elaion1" class="icono_elaion" src="./img/elaion.ico" alt=""><img id="icono_elaionf101" class="icono_elaion" src="./img/f10.jpg" alt=""><img id="icono_elaionf301" class="icono_elaion" src="./img/f30.jpg" alt=""><img id="icono_elaionf501" class="icono_elaion" src="./img/f50.jpg" alt=""><img id="icono_elaionfs501" class="icono_elaion" src="./img/ElaionFS540.png" alt=""> <input type="number" id="inputBuscar1" > 
+                    <button class="btn btn-danger" id="boton02"> <i class="fas fa-trash-alt"></i>  </button><button class="btn btn-primary" id="boton1">+ </button> 
+                   </td>
+                   <td id="descripcion1"></td>
+                   <td><select id="cantidad2">
+                    <!-- Agrega opciones numéricas según tus necesidades -->
+                    <option value="1"><span>1 Un</span></option>
+                    <option value="2"><span>2 Un</span></option>
+                    <option value="3"><span>3 Un</span></option>
+                    <option value="4"><span>4 Un</span></option>
+                    <option value="5"><span>5 Un</span></option>
+                    <option value="6"><span>6 Un</span></option>
+                    <option value="7"><span>7 Un</span></option>
+                    <option value="8"><span>8 Un</span></option>
+                    <option value="9"><span>9 Un</span></option>
+                    <!-- ... -->
+                  </select></td>
+                   <td class="precio" id="precio"></td>
+                   <td class="precio" id="precio1" ></td>
+                   </tr>
+                   
+                  <tr id="fila4">
+                  <th scope="row">Otros</th>
+                  <td>
+                    <img id="icono_elaion3" class="icono_elaion" src="./img/elaion.ico" alt=""><img id="icono_elaionf103" class="icono_elaion" src="./img/f10.jpg" alt=""><img id="icono_elaionf303" class="icono_elaion" src="./img/f30.jpg" alt=""><img id="icono_elaionf503" class="icono_elaion" src="./img/f50.jpg" alt=""> <img id="icono_kriox" class="icono_elaion" src="./img/kriox.png" alt=""><img id="icono_elaionfs503" class="icono_elaion" src="./img/ElaionFS540.png" alt=""><img id="icono_cabina" class="icono_elaion" src="./img/cabina.jpg" alt=""><input type="text" id="inputBuscar3"> 
+                    <button class="btn btn-danger" id="boton03"> <i class="fas fa-trash-alt"></i>  </button>   <button class="btn btn-primary" id="boton3">+ </button></td>
+                  </td>
+                  <td id="descripcion3"></td>
+                  <td><select id="cantidad3">
+                    <!-- Agrega opciones numéricas según tus necesidades -->
+                    <option value="1"><span>1 Un</span></option>
+                    <option value="2"><span>2 Un</span></option>
+                    <option value="3"><span>3 Un</span></option>
+                    <option value="4"><span>4 Un</span></option>
+                    <option value="5"><span>5 Un</span></option>
+                    <option value="6"><span>6 Un</span></option>
+                    <option value="7"><span>7 Un</span></option>
+                    <option value="8"><span>8 Un</span></option>
+                    <option value="9"><span>9 Un</span></option>
+                    <!-- ... -->
+                  </select></td>
+                   <td class="precio" id="precio"></td>
+                  <td class="precio" id="precio3" ></td>
+                  </tr>
+                  <tr id="fila5">
+                  <th scope="row">Filtro de Aceite </th> 
+                  <td>
+                    <img id="icono_aceite" class="icono_aceite" src="./img/faceite.ico" alt="">
+                    <input type="text" id="inputBuscar4"> 
+                    <button class="btn btn-danger" id="boton04"> <i class="fas fa-trash-alt"></i>  </button> <button class="btn btn-primary" id="boton4">+  </button></td>
+                  </td>
+                  <td id="descripcion4"></td>
+                  <td><select id="cantidad4">
+                    <!-- Agrega opciones numéricas según tus necesidades -->
+                    <option value="1"><span>1 Un</span></option>
+                    <option value="2"><span>2 Un</span></option>
+                    <option value="3"><span>3 Un</span></option>
+                    <option value="4"><span>4 Un</span></option>
+                    <option value="5"><span>5 Un</span></option>
+                    <option value="6"><span>6 Un</span></option>
+                    <option value="7"><span>7 Un</span></option>
+                    <option value="8"><span>8 Un</span></option>
+                    <option value="9"><span>9 Un</span></option>
+                    <!-- ... -->
+                  </select></td>
+                   <td class="precio" id="precio"></td>
+                  <td class="precio" id="precio4" ></td>
+                  </tr>
+                  <tr id="fila6">
+                  <th scope="row">Filtro de Aire</th>
+                <td>
+                  <img id="icono_aire" class="icono_aire" src="./img/faire.ico" alt=""><input type="text" id="inputBuscar5"> 
+                  <button class="btn btn-danger" id="boton05"> <i class="fas fa-trash-alt"></i>  </button>  <button class="btn btn-primary" id="boton5">+ </button>
+                </td>
+                </td>
+                <td id="descripcion5" ></td>
+            
+                <td><select id="cantidad5">
+                  <!-- Agrega opciones numéricas según tus necesidades -->
+                  <option value="1"><span>1 Un</span></option>
+                    <option value="2"><span>2 Un</span></option>
+                    <option value="3"><span>3 Un</span></option>
+                    <option value="4"><span>4 Un</span></option>
+                    <option value="5"><span>5 Un</span></option>
+                    <option value="6"><span>6 Un</span></option>
+                    <option value="7"><span>7 Un</span></option>
+                    <option value="8"><span>8 Un</span></option>
+                    <option value="9"><span>9 Un</span></option>
+                  <!-- ... -->
+                </select></td>
+                 <td class="precio" id="precio"></td>
+
+                <td class="precio" id="precio5" ></td>
+                </tr>
+                <tr id="fila7" class="filaContainer h-auto">
+                <th scope="row">Filtro de Combustible</th>
+                <td>
+                  <img id="icono_combustible" class="icono_combustible" src="./img/fcombustible.ico" alt="">
+                  <input type="text" id="inputBuscar6"> 
+                  <button class="btn btn-danger" id="boton06"> <i class="fas fa-trash-alt"></i>  </button>    <button class="btn btn-primary" id="boton6">+ </button></td>
+                </td>
+                <td id="descripcion6"></td>
+                <td><select id="cantidad6">
+                  <!-- Agrega opciones numéricas según tus necesidades -->
+                  <option value="1"><span>1 Un</span></option>
+                  <option value="2"><span>2 Un</span></option>
+                  <option value="3"><span>3 Un</span></option>
+                  <option value="4"><span>4 Un</span></option>
+                  <option value="5"><span>5 Un</span></option>
+                  <option value="6"><span>6 Un</span></option>
+                  <option value="7"><span>7 Un</span></option>
+                  <option value="8"><span>8 Un</span></option>
+                  <option value="9"><span>9 Un</span></option>
+                  <!-- ... -->
+                </select></td>
+                 <td class="precio" id="precio"></td>
+                <td class="precio" id="precio6"></td>
+                </tr>  
+              </tbody>
+            </table>
+            <div class="table-responsive">
+                <table>
+                  <tbody>
+                <tr class="filaContainer">
+                <th >
+                  <img id="logo_aca" class="logo_aca border border-success-subtle" src="./img/aca.jpg" alt="" style="display:none;">  
+                </th>
+                <th>
+                  <img id="logo_credito" class="logo_credito border border-success-subtle" src="./img/cuidamos.jpg" alt="" style="display:none;"><button class="btn btn-primary" id="boton7">Calcular Presupuesto <i class="fa-solid fa-calculator" style="color: #ffffff;"></i></button>
+                </th>
+                <th class="columnPadding" ></th>
+              
+                <th id="servicioCompleto" class="texto_completo" style="display:none;" ><p>   Servicio Completo</p></th>              
+                <th class="precio_completo"  id="sumaCompleto"></th>
+                              
+                </tr>
+                <td id="descripcion6"><img id="logo_escalonado" class="logo_escalonado border border-success-subtle" src="./img/promoescalonado.jpg" alt="" style="display:none;"></td>
+                <td id="precio6" ><img id="logo_cosmetica" class="logo_cosmetica border border-success-subtle" src="./img/cosmetica.jpg" alt="" style="display:none;"></td>
+              <th class="columnPadding"></th>
+                
+                <th id="servicioPremium" class="texto_premium" style="display:none;"><p>   Servicio Premium</p></th>
+                <th class="precio_premium" id="sumaPremium"></th>                             
+            </tbody>
+          </table>
+        </div>
+        </div>
+         <div>
+          <input type="text" id="buscarInput" placeholder="Buscar por descripción">
+          <button id="boton8" class="btn btn-primary">
+            Buscar <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>
+          </button>
+          
+          <ul id="resultados"></ul>
+        </div>    
+     
+     <!-- <div>
+       <div id="agregarProductos">
+        <button id="agregar-producto" class="btn btn-primary">Agregar nuevo producto</button>
+       <div id="modal-agregar-producto">
+        <form id="formulario-agregar-producto">
+         <label for="codigo">Código:</label>
+         <input type="text" id="codigox" name="codigo">  
+         <label for="descripcion">Descripción:</label>
+         <input type="text" id="descripcionx" name="descripcion">   
+         <label for="precio">Precio:</label>
+         <input type="number" id="preciox" name="precio"> 
+        <button type="submit" class="btn btn-primary">Confirmar Producto</button>      
+      </form>  
+     </div>
+    </div> -->
+    
+    <div class="contenedorCambio">
+    <input type="text" id="direccioninput">
+    <button class="btn btn-success btnDireccion" id="boton10">Confirmar nueva dirección <i class="fa-solid fa-location-dot" style="color: #ffffff;"></i></button>
+  </div> 
+  <div>
+    <input type="text" id="telefonoinput">
+    <button class="btn btn-success btnTelefono" id="boton11">Confirmar nuevo Teléfono <i class="fa-solid fa-mobile-retro" style="color: #ffffff;"></i></button>
+  </div> 
+  <div id="contenedorBtnLimpiarStorage">
+      <button id="boton9"  type="submit" class="btn btn-secondary">Eliminar Direccion y teléfono <i class="fas fa-trash-alt"></i></button>
+    </div>
+
+<div id="excel">
+        
+        
+        
+        <div><input  type="file" id="fileInput" accept=".xlsx">
+        <button class="btn btn-success" id="uploadButton">Subir Archivo Excel XLSX <i class="fa-solid fa-file-excel" style="color: #ffffff;"></i></i></button></div>
+          
+
+          <div><button class="btn btn-secondary" id="eliminarLocalStorageButton">Eliminar base de productos    <i class="fas fa-trash-alt"></i></button></div>
+</div>
+
+
+
+
+
+
+
+      </div>  
+
+
+
+
+      
+      <div class="container diagnosticos_contenedor" style="display:none;" id="diagnosticos_contenedor">   
+        <div class="row">
+          <div class="col border border-success-subtle">
+              <p class="completo_titulo1">   A. LUBRICANTES Y FILTROS </p>                         
+              <p class="nazul">01</p> Cambios de aceite y Filtro   <br>    
+              <p class="nazul">02</p> Reemplazo de filtro de aire  <br>
+              <p class="nazul">03</p> Revisión filtro de combustible <br>         
+              <p class="nazul">04</p> Revisión aceite caja de cambios <br>
+              <p class="nazul">05</p> Revisión aceite de <br>
+                transferencia <br>
+              <p class="nazul">06</p> Revision aceite diferencial <br>
+            </div>
+              <div class="col border border-success-subtle">
+                <p class="completo_titulo2">  B. FLUIDOS DEL VEHÍCULO </p>                   
+                <p class="nverde">07</p> Revisión de liquidos  <br>
+                  refrigerante y anticongelante <br>
+                  <br>
+                <p class="nverde">08</p> Revisión punto de  <br>
+                  congelamiento <br>
+                   <br>
+                <p class="nverde">09</p> Revisión del líquido de <br>
+                  dirección hidráulica <br>
+                  <br>
+                <p class="nverde">10</p> Revisión del liquido de frenos <br>
+                  <br>
+                <p class="nverde">11</p> Revisión de la batería<br>
+                  <br>
+                <p class="nverde">12</p> Revisión del líquido  <br>
+                 limpiaparabrisas 
+              </div>
+                <div class="col border border-success-subtle">
+                  <p class="completo_titulo3">   C. PARTES MECÁNICAS </p>                 
+                  <p class="nrojo">13</p> Revisión de guardapolvos y  
+                      holguras de transmisión <br> 
+                  <p class="nrojo">14</p> Revisión de correas: 
+                    alternador, aire 
+                    acondicionado y dirección 
+                    asistida <br>
+                  <p class="nrojo">15</p> Revisión de las mangueras <br>
+                  <p class="nrojo">16</p> Lubricación de bisagras y <br>
+                     retenedor de puertas <br> 
+                  <p class="nrojo">17</p> Revisión del caño de escape
+                      transferencia <br>
+                  <p class="nrojo">18</p> Control del tapón y arandela  
+                      del carter <br>
+                </div>
+                  <div class="col border border-success-subtle">
+                    <p class="completo_titulo4">  D. ELEMENTOS DE SEGURIDAD </p>
+                    <p class="namarillo">19</p>Pastillas y discos de freno <br>
+                    <p class="namarillo">20</p> Discos de freno<br>
+                    <p class="namarillo">21</p>Flexibles de frenos <br>
+                    <p class="namarillo">22</p> Amortiguadores <br>
+                    <p class="namarillo">23</p> Revisión y reposición de luces 
+                      exteriores y baúl <br>
+                    <p class="namarillo">24</p> Revisar y/o reemplazar  
+                      escobillas limpiaparabrisas <br>
+                    <p class="namarillo">25</p> Profundidad del dibujo y 
+                      ajuste de la presión de los 
+                      neumáticos <br>
+                    <p class="namarillo">26</p>Revisión tuerca neumáticos <br>
+                    <p class="namarillo">27</p>Chequeo de cinturones y trabas  
+                  </div>
+                    <div class="col-md-12 col-12 col-sm-12 col-xl-12 border border-success-subtle">
+                      <div class="descaner">E.DIAGNOSTICO ELECTRONICO (ESCANER) SERVICIO PREMIUM</div>
+                        <div class="container texto_escaner">
+                          <div class="row ">
+                              <div class="col">
+                                -Lectura de tensión de la Sonda <br> 
+                                 Lambda <br>                          
+                                -Lectura de Frenos ABS <br>
+                                -Airbag 
+                              </div>  
+                               <div class="col">
+                                 -Historial de Fallas <br>
+                                 -Lectora de Fallas Intrumental
+                              </div>  
+                                <div class="col">
+                                  -Lectura Climatización <br>
+                                  -Lectura de Sensores y Actuadores 
+                               </div>
+                                <div class="col">
+                                  - Lectura de Inyección <br>
+                                  - Reseteo Service
+                              </div>
+                            </div>
+                          </div>
+                         </div>
+                       </div>
+                     </div>  
+                   </div>    
+                  </div>
+                    <div class="border border-success-subtle" style="display:none;" id="contenedorCertificado"> 
+                    <p class="certificado"><b> El Servicio Completo y Premium con Elaion incluye Diagnóstico de 27 puntos, Certificado de Servicio y Producto, Base de datos con el Historial de su Vehículo  sin costo de mano de obra.(Presupuesto sujeto a modificaciones sin previo aviso)</b></p> 
+                  </div> 
+                  <div id="contenedorProductos"></div>   
+                </div>   
+    <footer> 
+  <!-- 
+      <form id="cuotasForm">
+        <input type="text" id="cuotasInput" placeholder="¿Operas con cuotas? (Sí/No)">
+        <input type="submit" value="Confirmar">
+      </form>
+      
+... -->
+      
+
+
+ 
+      
+<div id="interest">
+       <!--  
+      <input type="number" id="fee" placeholder="Ingrese interés">
+      <button class="btn btn-primary" onclick="guardarInteres()">Guardar Interés</button>
+      
+      <button class="btn btn-danger" onclick="eliminarInteres()">Eliminar Interés</button>
+... -->
+        
+    </div>
+    
+
+    </footer>
+    
+    <script>
+      function copyToClipboard(value) {
+  navigator.clipboard.writeText(value);
+  
+  Toastify({
+    text: "¡Código copiado al portapapeles!",
+    duration: 1000, // Duración en milisegundos
+    newWindow: true,
+    close: true,
+    gravity: "bottom", // Posición de la notificación
+    position: "left", // Posición de la notificación
+    backgroundColor: "linear-gradient(to right, #0D39C1  , #092EA2)", // Color de fondo de la notificación
+    stopOnFocus: true,
+  }).showToast();
+}
+
+    </script>
+   
+   
+
+
+
+
+
+
+
+   
+
+
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <script src="./js/index.js" defer></script>
+
+      
+
+
+
+      <script src="./js/bootstrap.min.js"></script>
+
+
+
+
+
+
+
+</body>
+</html>

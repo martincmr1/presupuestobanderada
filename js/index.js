@@ -527,15 +527,21 @@ function buscarCoincidencia(
   inputSearch,
   descripcionSearch,
   priceSearch,
-  quantity
+  quantity,
+  
 ) {
-  const codigo = document.getElementById(inputSearch).value;
+  
+  const codigo = document.getElementById(inputSearch).value.toLowerCase();
+  
+  //const codigo = document.getElementById(inputSearch).value;
   const producto = productos.find((p) => p.codigo === codigo);
+
+
 
   if (!producto) {
     Swal.fire("Código no encontrado");
   } else {
-    document.getElementById(descripcionSearch).innerHTML = producto.descripcion;
+    document.getElementById(descripcionSearch).innerHTML = producto.descripcion ;
 
     // Convertimos producto.precio en un número entero antes de la multiplicación
     const precio = parseInt(producto.precio, 10);
@@ -558,6 +564,7 @@ selectCantidad1.addEventListener("change", () => {
     "descripcion",
     "precio",
     valorSeleccionado1
+    
   );
 });
 
@@ -568,6 +575,7 @@ input0.addEventListener("change", () => {
     "descripcion",
     "precio",
     valorSeleccionado1
+    
   );
 });
 
@@ -583,6 +591,7 @@ selectCantidad2.addEventListener("change", () => {
     "descripcion1",
     "precio1",
     valorSeleccionado2
+    
   );
 });
 
@@ -593,6 +602,7 @@ input1.addEventListener("change", () => {
     "descripcion1",
     "precio1",
     valorSeleccionado2
+    
   );
 });
 
@@ -608,6 +618,7 @@ selectCantidad3.addEventListener("change", () => {
     "descripcion3",
     "precio3",
     valorSeleccionado3
+    
   );
 });
 
@@ -618,6 +629,7 @@ input2.addEventListener("change", () => {
     "descripcion3",
     "precio3",
     valorSeleccionado3
+    
   );
 });
 
@@ -633,6 +645,8 @@ selectCantidad4.addEventListener("change", () => {
     "descripcion4",
     "precio4",
     valorSeleccionado4
+  
+    
   );
 });
 
@@ -643,6 +657,8 @@ input3.addEventListener("change", () => {
     "descripcion4",
     "precio4",
     valorSeleccionado4
+   
+
   );
 });
 
@@ -658,6 +674,7 @@ selectCantidad5.addEventListener("change", () => {
     "descripcion5",
     "precio5",
     valorSeleccionado5
+    
   );
 });
 
@@ -668,6 +685,7 @@ input4.addEventListener("change", () => {
     "descripcion5",
     "precio5",
     valorSeleccionado5
+    
   );
 });
 
@@ -683,6 +701,7 @@ selectCantidad6.addEventListener("change", () => {
     "descripcion6",
     "precio6",
     valorSeleccionado6
+    
   );
 });
 
@@ -693,6 +712,7 @@ input5.addEventListener("change", () => {
     "descripcion6",
     "precio6",
     valorSeleccionado6
+  
   );
 });
 
@@ -1148,109 +1168,8 @@ function ocultarInputs() {
 
 
   } else if (
-    inputBuscar3.value === "15099" ||
-    inputBuscar3.value === "15610" ||
-    inputBuscar3.value === "15545" ||
-    inputBuscar3.value === "15539" ||
-    inputBuscar3.value === "15557" ||
-    inputBuscar3.value === "15546" ||
-    inputBuscar3.value === "15192" ||
-    inputBuscar3.value === "15347" ||
-    inputBuscar3.value === "15348" ||
-    inputBuscar3.value === "15157" ||
-    inputBuscar3.value === "15111" ||
-    inputBuscar3.value === "15072" ||
-    inputBuscar3.value === "15086" ||
-    inputBuscar3.value === "15009" ||
-    inputBuscar3.value === "15128" ||
-    inputBuscar3.value === "15060" ||
-    inputBuscar3.value === "15136" ||
-    inputBuscar3.value === "15129" ||
-    inputBuscar3.value === "14787" ||
-    inputBuscar3.value === "14784" ||
-    inputBuscar3.value === "14795" ||
-    inputBuscar3.value === "14796" ||
-    inputBuscar3.value === "14797" ||
-    inputBuscar3.value === "14938" ||
-    inputBuscar3.value === "14677" ||
-    inputBuscar3.value === "14801" ||
-    inputBuscar3.value === "14802" ||
-    inputBuscar3.value === "14803" ||
-    inputBuscar3.value === "14806" ||
-    inputBuscar3.value === "11908" ||
-    inputBuscar3.value === "11907" ||
-    inputBuscar3.value === "14169" ||
-    inputBuscar3.value === "11977" ||
-    inputBuscar3.value === "11978" ||
-    inputBuscar3.value === "14779" ||
-    inputBuscar3.value === "14780" ||
-    inputBuscar3.value === "15655" ||
-    inputBuscar3.value === "4011558078331" ||
-    inputBuscar3.value === "4011558807405" ||
-    inputBuscar3.value === "4011558308407" ||
-    inputBuscar3.value === "15576" ||
-    inputBuscar3.value === "15646" ||
-    inputBuscar3.value === "4011558540906" ||
-    inputBuscar3.value === "15652" ||
-    inputBuscar3.value === "4011558093266" ||
-    inputBuscar3.value === "4011558073206" ||
-    inputBuscar3.value === "15422" ||
-    inputBuscar3.value === "15610" ||
-    inputBuscar3.value === "7893390206144" ||
-    inputBuscar3.value === "4011558312602" ||
-    inputBuscar3.value === "4011558258801" ||
-    inputBuscar3.value === "16273" ||
-    inputBuscar3.value === "4011558816797" ||
-    inputBuscar3.value === "4011558002039" ||
-    inputBuscar3.value === "15653" ||
-    inputBuscar3.value === "4011558029081" ||
-    inputBuscar3.value === "4011558042998" ||
-    inputBuscar3.value === "16230" ||
-    inputBuscar3.value === "16240" ||
-    inputBuscar3.value === "4011558089368" ||
-    inputBuscar3.value === "16236" ||
-    inputBuscar3.value === "15642" ||
-    inputBuscar3.value === "15425" ||
-    inputBuscar3.value === "16295" ||
-    inputBuscar3.value === "16231" ||
-    inputBuscar3.value === "4011558542504" ||
-    inputBuscar3.value === "15577" ||
-    inputBuscar3.value === "4011558306502" ||
-    inputBuscar3.value === "4011558311209" ||
-    inputBuscar3.value === "15427" ||
-    inputBuscar3.value === "4011558250003" ||
-    inputBuscar3.value === "4011558311902" ||
-    inputBuscar3.value === "4011558307301" ||
-    inputBuscar3.value === "15651" ||
-    inputBuscar3.value === "7893390206601" ||
-    inputBuscar3.value === "4011558032265" ||
-    inputBuscar3.value === "4011558030971" ||
-    inputBuscar3.value === "16289" ||
-    inputBuscar3.value === "4011558061197" ||
-    inputBuscar3.value === "4011558031367" ||
-    inputBuscar3.value === "4011558072025" ||
-    inputBuscar3.value === "4011558078300" ||
-inputBuscar3.value === "4011558078423" ||
-inputBuscar3.value === "4011558012915" ||
-inputBuscar3.value === "4011558405700" ||
-inputBuscar3.value === "4011558300807" ||
-inputBuscar3.value === "4011558807948" ||
-inputBuscar3.value === "4011558066659" ||
-inputBuscar3.value === "15572" ||
-inputBuscar3.value === "15445" ||
-inputBuscar3.value === "15444" ||
-inputBuscar3.value === "15530" ||
-inputBuscar3.value === "16254" ||
-inputBuscar3.value === "15137" ||
-inputBuscar3.value === "7790184752309" ||
-inputBuscar3.value === "15386" ||
-inputBuscar3.value === "4011558308902" ||
-inputBuscar3.value === "18507" ||
-inputBuscar3.value === "4011558006600" ||
-inputBuscar3.value === "15014" ||
-inputBuscar3.value === "16305" ||
-inputBuscar3.value === "15346" ||
-inputBuscar3.value === "15540" 
+    inputBuscar3.value.startsWith("h") || inputBuscar3.value.startsWith("H")
+    
 
 
     
